@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class ButtonsScreen extends StatelessWidget {
+  static const String name = 'buttons_screen';
   const ButtonsScreen({super.key});
 
   @override
@@ -43,27 +44,23 @@ class _ButtonsView extends StatelessWidget {
                 onPressed: () {},
                 icon: const Icon(Icons.access_alarm_rounded),
                 label: const Text('Elevated Icon')),
-
             FilledButton(onPressed: () {}, child: const Text('Filled')),
             FilledButton.icon(
               onPressed: () {},
               icon: const Icon(Icons.accessibility_new),
               label: const Text('Filled Icon'),
             ),
-
             OutlinedButton(onPressed: () {}, child: const Text('Outline')),
             OutlinedButton.icon(
                 onPressed: () {},
                 label: const Text('Outline Icon'),
                 icon: const Icon(Icons.terminal)),
-
             TextButton(onPressed: () {}, child: const Text('Text')),
             TextButton.icon(
               onPressed: () {},
               icon: const Icon(Icons.account_box_outlined),
               label: const Text('Text Icon'),
             ),
-
             const CustomButton(),
             IconButton(
                 onPressed: () {},
