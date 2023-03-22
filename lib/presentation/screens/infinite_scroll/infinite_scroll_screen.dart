@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
-class InfiniteScreen extends StatelessWidget {
-  static const name = 'progres_screen';
-  const InfiniteScreen({super.key});
+class InfiniteScrollScreen extends StatelessWidget {
+
+  static const name = 'infinite_screen';
+
+  const InfiniteScrollScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Placeholder();
   }
 }
