@@ -23,9 +23,20 @@ class AppTheme {
 
 //retorno un themedata
   ThemeData getTheme() => ThemeData(
-      useMaterial3: true,
-      brightness: isDarkMode ? Brightness.dark : Brightness.light,
-      colorSchemeSeed: colorList[selectedColor],
-      //configuracion de todfos los appbar
-      appBarTheme: const AppBarTheme(centerTitle: false));
+        useMaterial3: true,
+        brightness: isDarkMode ? Brightness.dark : Brightness.light,
+        colorSchemeSeed: colorList[selectedColor],
+        //configuracion de todfos los appbar
+        appBarTheme: const AppBarTheme(centerTitle: false),
+      );
+
+//copywith para copiar el estado
+  AppTheme copyWith({
+    int? selectedColor,
+    bool? isDarkMode,
+  }) =>
+      AppTheme(
+        selectedColor: selectedColor ?? this.selectedColor,
+        isDarkMode: isDarkMode ?? this.isDarkMode,
+      );
 }

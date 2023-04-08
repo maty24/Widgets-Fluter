@@ -6,11 +6,8 @@ import 'package:widgets_app/presentation/providers/theme_provider.dart';
 
 void main() {
   runApp(
-    //inicar el provider de riverpod 
-    const ProviderScope(
-      child:  MainApp()
-      )
-    );
+      //inicar el provider de riverpod
+      const ProviderScope(child: MainApp()));
 }
 
 class MainApp extends ConsumerWidget {
@@ -18,8 +15,10 @@ class MainApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-    final isDarkMode = ref.watch(isDarkModeProvider);
-    final selectedColor = ref.watch(selectedColorProvider);
+    //final isDarkMode = ref.watch(isDarkModeProvider);
+    //final selectedColor = ref.watch(selectedColorProvider);
+
+    final AppTheme appTheme = ref.watch(themeNotifierProvider);
     //router para las rutas
     return MaterialApp.router(
       //configuracion de la ruta
@@ -27,7 +26,7 @@ class MainApp extends ConsumerWidget {
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
       //le envio los estados de los providers
-      theme: AppTheme(selectedColor: selectedColor, isDarkMode: isDarkMode ).getTheme(),
+      theme: appTheme.getTheme(),
     );
   }
 }
